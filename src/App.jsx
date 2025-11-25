@@ -3,59 +3,56 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+// Your real Home.jsx (the one with HeroSection, Countdown, Sponsors, etc.)
+import Home from "./Home";
+
+// Other pages
 import Register from "./Register";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-import Footer from "./Footer";
+import ResultsGallery from "./ResultsGallery";
+import AdminDashboard from "./AdminDashboard";
+import Accomodation from "./Accomodation";
+import AdminAccommodation from "./AdminAccommodation";
 
-/* Simple Home placeholder — replace with your actual homepage component */
-function Home() {
-  return (
-    <main className="min-h-screen">
-      <div className="max-w-6xl mx-auto py-32 px-4 text-center">
-        <h1 className="text-4xl font-extrabold text-teal-700">Welcome — Marathon Run</h1>
-        <p className="mt-4 text-slate-600">Use the navbar to navigate to Register / Sign In pages.</p>
+// scroll from top 
+import ScrollToTop from "./ScrollToTop";
 
-        <div className="mt-10">
-          <a href="/register" className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg shadow hover:bg-teal-700 transition">
-            Register Now
-          </a>
-        </div>
-
-        {/* filler content so you can test scrolling / sticky nav */}
-        <div className="mt-16 space-y-8 text-left">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <p className="text-slate-600" key={i}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet turpis non lorem
-              molestie aliquet. Integer id mi ut eros luctus efficitur.
-            </p>
-          ))}
-        </div>
-      </div>
-    </main>
-  );
-}
+// under maintenance
+import UnderMaintenance from "./UnderMaintenance";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
-        {/* Navbar will stay on top and highlight active route automatically */}
+
+        {/* Navbar always on top */}
         <Navbar />
 
-        {/* Main content area - routes swap here */}
-        <div className="flex-1">
+        {/* Route area */}
+        <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-            {/* add other routes as needed */}
+            <Route path="/results" element={<ResultsGallery />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/accommodation" element={<Accomodation />} />
+            <Route path="/admin/accommodation" element={<AdminAccommodation />} />
+            <Route path="/community" element={<UnderMaintenance />} />
+            <Route path="/expo" element={<UnderMaintenance />} />
+            <Route path="/raceday" element={<UnderMaintenance />} />
+            <Route path="/dashboard" element={<UnderMaintenance />} />
           </Routes>
-        </div>
+        </main>
 
-        {/* Footer */}
+        {/* Footer always at bottom */}
         <Footer />
+
       </div>
     </BrowserRouter>
   );

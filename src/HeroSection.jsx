@@ -1,45 +1,48 @@
+// src/HeroSection.jsx
+import React from "react";
+import { Link } from "react-router-dom";
+
 function HeroSection() {
-    return (
-        <>
-            <div className="bg-teal-100 h-100 flex flex-col items-center justify-center py-10">
+  return (
+    <section className="min-h-[70vh] flex items-center justify-center bg-linear-to-b from-cyan-50 via-teal-50/40 to-cyan-50">
+      <div className="max-w-5xl mx-auto px-4 text-center">
 
-                {/* Date + Location Box */}
-                <div className="bg-teal-400 text-white text-xl font-bold px-6 py-4 m-4 rounded-2xl">
-                    March 15, 2024 * Central Park, NYC
-                </div>
+        {/* Date + location pill */}
+        <div className="inline-flex items-center px-6 py-2 rounded-full bg-teal-500 text-white text-sm font-semibold shadow-sm mb-8">
+          March 15, 2024 • Central Park, NYC
+        </div>
 
-                {/* Marathon Title */}
-                <div className="text-teal-700 text-3xl font-extrabold">
-                    Marathon Run 2024
-                </div>
+        {/* Main heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-teal-700 mb-8">
+          Marathon Run 2024
+        </h1>
 
-                <div className="">Join thousands of runners in the most exiciting marathon event of the year.
-                    <br />
-                    Challenge yourself, achieve your goals,
-                    and cross the finish line with pride.
-                </div>
+        {/* Subheading */}
+        <p className="max-w-4xl mx-auto text-lg md:text-2xl text-slate-600 leading-relaxed mb-10">
+          Join thousands of runners in the most exciting marathon event of the
+          year. Challenge yourself, achieve your goals, and cross the finish
+          line with pride.
+        </p>
 
-                <div className="flex gap-4 mt-6">
-  <button
-    className="bg-teal-600 text-white px-6 py-2 rounded-lg font-semibold"
-    onClick={() => alert("Register button clicked!")}
-  >
-    Register Now
-  </button>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/register"
+            className="inline-flex items-center justify-center px-10 py-3 rounded-full text-white font-semibold shadow-lg bg-linear-to-r from-teal-600 to-cyan-500 hover:from-teal-700 hover:to-cyan-600 transition"
+          >
+            Register Now
+          </Link>
 
-  <button
-    className="bg-gray-700 text-white px-6 py-2 rounded-lg font-semibold"
-    onClick={() => alert("View Results clicked!")}
-  >
-    View Results
-  </button>
-</div>
-
-
-
-            </div>
-        </>
-    )
+          <a
+            href="#results"
+            className="inline-flex items-center justify-center px-10 py-3 rounded-full text-teal-700 font-semibold bg-white border border-teal-100 shadow-sm hover:bg-teal-50 transition"
+          >
+            View Results
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default HeroSection;

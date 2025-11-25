@@ -43,7 +43,7 @@ function SignUp() {
 
         {/* Submit Button */}
         <button
-          className="w-full py-2 rounded-lg text-white font-semibold"
+          className="w-full py-2 rounded-lg text-white font-semibold cursor-pointer"
           style={{ background: "linear-gradient(90deg,#05c6d7,#0c9aa3)" }}
         >
           Create Account

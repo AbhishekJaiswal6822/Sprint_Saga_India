@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function CallToAction() {
+  const navigate = useNavigate();   // ⭐ allows navigation
+
   return (
     <section
       className="
@@ -8,7 +11,7 @@ function CallToAction() {
         py-24 
         text-center 
         text-white 
-        bg-gradient-to-r 
+        bg-linear-to-r 
         from-teal-800 
         via-teal-600 
         to-cyan-500
@@ -39,8 +42,9 @@ function CallToAction() {
             shadow-md 
             hover:bg-gray-100 
             transition
+            cursor-pointer
           "
-          onClick={() => alert("Register Now clicked!")}
+          onClick={() => navigate("/register")}   // ⭐ go to Register
         >
           Register Now – Early Bird Pricing
         </button>

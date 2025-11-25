@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-function EventCountdown({ targetDate = "2025-03-15T09:00:00" }) {
+function EventCountdown() {
+  // 🔥 Target: New Year 2026
+  const targetDate = "2026-01-01T00:00:00";
 
   // Function to calculate remaining time
   const getTimeLeft = () => {
     const now = new Date();
     const target = new Date(targetDate);
-    const diff = Math.max(0, target - now);
+    const diff = target - now;
+
+    if (diff <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0, finished: true };
+    }
 
     const secTotal = Math.floor(diff / 1000);
     const days = Math.floor(secTotal / 86400);
@@ -14,7 +20,7 @@ function EventCountdown({ targetDate = "2025-03-15T09:00:00" }) {
     const minutes = Math.floor((secTotal % 3600) / 60);
     const seconds = secTotal % 60;
 
-    return { days, hours, minutes, seconds };
+    return { days, hours, minutes, seconds, finished: false };
   };
 
   // State for countdown
@@ -23,10 +29,18 @@ function EventCountdown({ targetDate = "2025-03-15T09:00:00" }) {
   // Update every second
   useEffect(() => {
     const id = setInterval(() => {
-      setTime(getTimeLeft());
+      setTime((prev) => {
+        const next = getTimeLeft();
+        // stop interval once finished
+        if (next.finished && !prev.finished) {
+          clearInterval(id);
+        }
+        return next;
+      });
     }, 1000);
+
     return () => clearInterval(id);
-  }, [targetDate]);
+  }, []); // targetDate is constant here
 
   // Box Component
   const Box = ({ value, label }) => (
@@ -41,28 +55,32 @@ function EventCountdown({ targetDate = "2025-03-15T09:00:00" }) {
   );
 
   return (
-    <>
-      <section className="py-14 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center px-4">
+    <section className="py-14 bg-gray-50">
+      <div className="max-w-4xl mx-auto text-center px-4">
+        {/* Heading */}
+        <h2 className="text-4xl font-extrabold text-slate-800 mb-3">
+          {time.finished ? "Happy New Year 2026! 🎉" : "Event Starts In"}
+        </h2>
 
-          {/* Heading */}
-          <h2 className="text-4xl font-extrabold text-slate-800 mb-8">
-            Event Starts In
-          </h2>
+        {!time.finished && (
+          <>
+            <p className="text-slate-500 mb-8">
+              Countdown to New Year 2026
+            </p>
 
-          {/* Countdown Boxes */}
-          <div className="flex justify-center">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-              <Box value={time.days} label="Days" />
-              <Box value={time.hours} label="Hours" />
-              <Box value={time.minutes} label="Minutes" />
-              <Box value={time.seconds} label="Seconds" />
+            {/* Countdown Boxes */}
+            <div className="flex justify-center">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                <Box value={time.days} label="Days" />
+                <Box value={time.hours} label="Hours" />
+                <Box value={time.minutes} label="Minutes" />
+                <Box value={time.seconds} label="Seconds" />
+              </div>
             </div>
-          </div>
-
-        </div>
-      </section>
-    </>
+          </>
+        )}
+      </div>
+    </section>
   );
 }
 
