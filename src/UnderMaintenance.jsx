@@ -16,7 +16,7 @@ function UnderMaintenance() {
 
         {/* Title */}
         <h1 className="text-3xl font-extrabold text-teal-700 mb-3">
-          Page Under Maintenance
+          Coming Soon
         </h1>
 
         {/* Subtitle */}

@@ -1,6 +1,6 @@
 // src/Home.jsx
 import React from "react";
-import HeroSection from "./HeroSection";
+import HeroSection from "./Hero";
 import EventCountdown from "./EventCountdown";
 import EventInformation from "./EventInformation";
 import RaceCategories from "./RaceCategories";

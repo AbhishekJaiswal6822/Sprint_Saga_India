@@ -6,10 +6,10 @@ import { FaMedal } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";   // ⭐ add this
 
 const categories = [
-  { id: 1, Icon: AiOutlineHeart, title: "5K Fun Run", price: "$25" },
-  { id: 2, Icon: RiStarLine, title: "10K Challenge", price: "$35" },
-  { id: 3, Icon: GiTrophy, title: "Half Marathon", price: "$45" },
-  { id: 4, Icon: FaMedal, title: "Full Marathon", price: "$75" },
+  { id: 1, Icon: AiOutlineHeart, title: "5K Fun Run" },
+  { id: 2, Icon: RiStarLine, title: "10K Challenge"},
+  { id: 3, Icon: GiTrophy, title: "Half Marathon" },
+  { id: 4, Icon: FaMedal, title: "Full Marathon"  },
 ];
 
 function RaceCategories() {

@@ -23,6 +23,11 @@ import ScrollToTop from "./ScrollToTop";
 // under maintenance
 import UnderMaintenance from "./UnderMaintenance";
 
+
+// faqs 
+import Faqs from "./Faqs";
+import PrivacyPolicy from "./PrivacyPolicy";
+
 function App() {
   return (
     <BrowserRouter>
@@ -47,6 +52,9 @@ function App() {
             <Route path="/expo" element={<UnderMaintenance />} />
             <Route path="/raceday" element={<UnderMaintenance />} />
             <Route path="/dashboard" element={<UnderMaintenance />} />
+            <Route path="/faqs" element={<Faqs />} />
+            <Route path="/privacy&policies" element={<PrivacyPolicy/>}/>
+
           </Routes>
         </main>
 

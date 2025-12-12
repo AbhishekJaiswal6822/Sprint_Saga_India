@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 
 function EventCountdown() {
   // 🔥 Target: New Year 2026
-  const targetDate = "2026-01-01T00:00:00";
+  //  new target : 12th of april 2026
+ const targetDate = "2026-04-12T00:00:00";
 
   // Function to calculate remaining time
   const getTimeLeft = () => {
@@ -65,7 +66,7 @@ function EventCountdown() {
         {!time.finished && (
           <>
             <p className="text-slate-500 mb-8">
-              Countdown to New Year 2026
+              Countdown to LokRaja 2026
             </p>
 
             {/* Countdown Boxes */}

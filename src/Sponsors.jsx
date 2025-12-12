@@ -14,7 +14,7 @@ function Sponsors() {
         
         {/* Heading */}
         <h2 className="text-4xl font-extrabold text-slate-800">
-          Our Sponsors
+          Our Partnerships
         </h2>
         <p className="text-slate-500 mt-2 mb-10">
           Powered by industry leaders
