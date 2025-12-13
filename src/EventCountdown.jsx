@@ -56,7 +56,7 @@ function EventCountdown() {
   );
 
   return (
-    <section className="py-14 bg-gray-50">
+    <section className="py-14 bg-gray-50  max-h-screen">
       <div className="max-w-4xl mx-auto text-center px-4">
         {/* Heading */}
         <h2 className="text-4xl font-extrabold text-slate-800 mb-3">

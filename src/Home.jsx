@@ -7,14 +7,16 @@ import RaceCategories from "./RaceCategories";
 import PrizesRewards from "./PrizesRewards";
 import Sponsors from "./Sponsors";
 import CallToAction from "./CallToAction";
+import EventOverview from "./EventOverview";
 
 function Home() {
   return (
     <main className="w-full overflow-x-hidden">
       <HeroSection />
       <EventCountdown />
-      <EventInformation />
-      <RaceCategories />
+      {/* <EventInformation /> */}
+      {/* <RaceCategories /> */}
+      <EventOverview />
       <PrizesRewards />
       <Sponsors />
       <CallToAction />

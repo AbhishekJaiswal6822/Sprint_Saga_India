@@ -47,7 +47,7 @@ function PrizesRewards() {
           <PrizeCard
             Icon={GiTrophy}
             title="1st Place"
-            amount="$5,000"
+            amount="₹50,000"
             note="Cash Prize + Trophy"
             iconColor="#B45309" // amber/dark-gold
             bgColor={{ bg: "linear-gradient(180deg,#fff8dc,#fff7e0)", border: "#F6E6AD" }}
@@ -56,7 +56,7 @@ function PrizesRewards() {
           <PrizeCard
             Icon={FaMedal}
             title="2nd Place"
-            amount="$3,000"
+            amount="₹30,000"
             note="Cash Prize + Medal"
             iconColor="#374151" // slate/charcoal
             bgColor={{ bg: "linear-gradient(180deg,#f8fafc,#f3f6f9)", border: "#E9EEF3" }}
@@ -65,7 +65,7 @@ function PrizesRewards() {
           <PrizeCard
             Icon={AiOutlineStar}
             title="3rd Place"
-            amount="$1,000"
+            amount="₹10,000"
             note="Cash Prize + Medal"
             iconColor="#ea580c" // orange
             bgColor={{ bg: "linear-gradient(180deg,#fff6ef,#fff2e8)", border: "#F6E6D8" }}
